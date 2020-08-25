@@ -13,8 +13,6 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { LoadingScreenComponent } from './pages/loading-screen/loading-screen.component';
-
 
 @NgModule({
   declarations: [
@@ -26,7 +24,6 @@ import { LoadingScreenComponent } from './pages/loading-screen/loading-screen.co
     MeasurementsComponent,
     SummaryComponent,
     WelcomeComponent,
-    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,
