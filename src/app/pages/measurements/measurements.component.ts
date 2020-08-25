@@ -5,11 +5,19 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './measurements.component.html',
   styleUrls: ['./measurements.component.scss']
 })
-export class MeasurementsComponent implements OnInit {
+export class MeasurementsComponent {
+
+  heigth = 0;
+  weigth = 0;
 
   constructor() { }
 
-  ngOnInit() {
+  setHeight(value) {
+    this.heigth = value;
+  }
+
+  setWeigth(value) {
+    this.weigth = value;
   }
 
 }
