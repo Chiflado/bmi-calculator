@@ -32,8 +32,19 @@
             gombra.
         </p>
         <div class="button-wrapper">
-            <button class="btn btn-secondary" (click)="back()">Vissza</button>
-            <button class="btn btn-primary" (click)="submit()" [disabled]="!formIsValid">Befejezés</button>
+            <button
+                class="btn btn-secondary"
+                (click)="back()">
+                <span> < </span>
+                <span>Vissza</span>
+            </button>
+            <button
+                class="btn btn-primary"
+            (click)="submit()"
+            [disabled]="!formIsValid">
+            <span>Befejezés</span>
+            <span>></span>
+        </button>
         </div>
     </form>
 

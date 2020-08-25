@@ -19,7 +19,13 @@
             <input name="ram" type="range" id="age-range" min="0" max="99" [(ngModel)]="age" (ngModelChange)="setAge($event)" value="0">
             <input type="text" id="age-display" placeholder="{{age}}" disabled>
         </div>
-        <button class="btn btn-primary btn-block" (click)="navigatesToMeasurementsPage()" [disabled]="!formIsValid">Tovább</button>
+        <button
+            class="btn btn-primary btn-block"
+            (click)="navigatesToMeasurementsPage()"
+            [disabled]="!formIsValid">
+            <span>Tovább</span>
+            <span>></span>
+        </button>
     </form>
 
 </div>
