@@ -14,16 +14,20 @@ export class PersonalDataComponent {
 
   setName(value) {
     this.firstName = value;
-    this.formIsValid = this.firstName.length > 0 && this.gender.length > 0 && this.age > 0;
+    this.setFormValidation();
   }
 
   setGender(value) {
     this.gender = value;
-    this.formIsValid = this.firstName.length > 0 && this.gender.length > 0 && this.age > 0;
+    this.setFormValidation();
   }
 
   setAge(value) {
     this.age = value;
+    this.setFormValidation();
+  }
+
+  setFormValidation() {
     this.formIsValid = this.firstName.length > 0 && this.gender.length > 0 && this.age > 0;
   }
 
