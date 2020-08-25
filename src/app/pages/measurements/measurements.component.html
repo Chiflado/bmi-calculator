@@ -1,9 +1,8 @@
 
 <div class="card-body">
     <h5 class="card-title">Kérem adja meg a magasságát és a súlyát</h5>
-    <form>
-        <div class="form-row">
-            <div class="col-md-6 mb-3">
+    <form class="needs-validation" novalidate>
+        <div class="form-element">
             <label for="heigth-input">Magasság (cm)</label>
             <input 
                 type="number"
@@ -12,9 +11,9 @@
                 min="0"
                 (input)="setHeight($event.target.value)"
                 value="{{height}}"
-                required>
-            </div>
-            <div class="col-md-6 mb-3">
+                required>   
+        </div>
+        <div class="form-element">
             <label for="weigth">Súly (kg)</label>
             <input
                 type="number"
@@ -24,7 +23,6 @@
                 (input)="setWeigth($event.target.value)"
                 value="{{weight}}"
                 required>
-            </div>
         </div>
         <p>
             A Te neved {{firstName}}, {{age}}éves vagy és {{gender}}. A testsúlyod {{weight}} kg és {{height}}
@@ -34,19 +32,36 @@
         <div class="button-wrapper">
             <button
                 class="btn btn-secondary"
-                (click)="back()">
+                data-toggle="modal" data-target="#staticBackdrop">
                 <span> < </span>
                 <span>Vissza</span>
             </button>
             <button
                 class="btn btn-primary"
-            (click)="submit()"
-            [disabled]="!formIsValid">
-            <span>Befejezés</span>
-            <span>></span>
-        </button>
+                [disabled]="!formIsValid"
+                (click)="sumbit()">
+                <span>Befejezés</span>
+                <span>></span>
+            </button>
         </div>
     </form>
+</div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Biztos a műveletben?</h5>
+        </div>
+
+        <div class="modal-footer">
+            <div class="button-wrapper">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Nem</button>
+                <button type="button" class="btn btn-primary" (click)="cancel()" data-dismiss="modal">Igen</button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

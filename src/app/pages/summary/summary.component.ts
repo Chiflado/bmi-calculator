@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
+  isVisible = false;
+
   constructor() { }
 
   ngOnInit() {
+    const splashScreen: HTMLElement = document.getElementById('splashScreenClass');
+    setTimeout(() => {
+      splashScreen.remove();
+      this.isVisible = true;
+    }, 3000);
   }
 
 }

@@ -14,18 +14,33 @@ export class MeasurementsComponent {
   gender = sessionStorage.getItem('gender') || '';
   age = sessionStorage.getItem('age') || 0;
 
+  formIsValid = false;
+
   constructor(private router: Router) { }
 
   setHeight(value) {
     this.heigth = value;
+    sessionStorage.setItem('height', this.heigth.toString());
+    this.setFormValidation();
   }
 
   setWeigth(value) {
     this.weigth = value;
+    sessionStorage.setItem('weight', this.weigth.toString());
+    this.setFormValidation();
   }
 
-  back() {
+  cancel() {
+    sessionStorage.clear();
     this.router.navigate(['personal-data']);
+  }
+
+  submit() {
+    this.router.navigate(['summary']);
+  }
+
+  setFormValidation() {
+    this.formIsValid = this.weigth > 0 && this.heigth > 0;
   }
 
 }

@@ -1,5 +1,24 @@
 @import "_variables.scss";
 
+* {
+    font-family: Roboto;
+}
+
+h1 {
+    font-family: Montserat;
+}
+
+button {
+    width: 256px;
+    height: 56px;
+    padding: 20px 0 16px 0;
+    margin: 0 16px;
+    font-size: 16px;
+    span + span {
+            margin-left: 16px;
+    }
+}
+
 .layout-wrapper {
     display: flex;
     flex-direction: column;
@@ -23,5 +42,44 @@
     background: $secondary;
     height: 100%;
     overflow-y: auto;
+}
 
+.content-card {
+    width: 80%;
+    margin: 20px;
+    padding: 1.75rem;
+    display: flex;
+    align-items: center;
+    
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.form-element {
+    margin-bottom: 32px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#age-range {
+    width: 200px;
+}
+
+#age-display {
+    width: 30px;
+}
+
+.custom-select {
+    font-family: Roboto, 'FontAwesome';
+}
+
+.form-control {
+    height: 56px;
+    width: 280px;
 }
