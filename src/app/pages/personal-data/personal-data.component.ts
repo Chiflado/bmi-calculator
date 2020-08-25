@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDataComponent implements OnInit {
 
+  myModel = 0;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setAge(value) {
+    this.myModel = value;
   }
 
 }

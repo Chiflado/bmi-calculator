@@ -1,1 +1,24 @@
-<p>personal-data works!</p>
+
+<div class="card-body">
+    <h5 class="card-title">Kérem adja meg a személyes adatait</h5>
+    <form>
+        <div class="form-element">
+            <label for="first-name">Keresztnév</label>
+            <input type="text" class="form-control" id="first-name" required>
+        </div>
+        <div class="form-element">
+            <label for="gender">Nem</label>
+            <select class="custom-select" id="gender" required>
+              <option selected disabled value="">Válasszon...</option>
+              <option>férfi</option>
+              <option>nő</option>
+            </select>
+        </div> 
+        <label for="age-range">Életkor</label>
+        <div class="range-wrap form-element">
+            <input name="ram" type="range" id="age-range" min="0" max="99" [(ngModel)]="myModel" (ngModelChange)="setAge($event)" value="0">
+            <input type="text" id="age-display" placeholder="{{myModel}}" disabled>
+        </div>
+    </form>
+    <button class="btn btn-primary" type="submit">Tovább</button>
+</div>
