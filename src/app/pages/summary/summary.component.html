@@ -19,4 +19,24 @@
 
 <div class="card-body" *ngIf="isVisible"> 
     <h5 class="card-title">Összegzés</h5>
+    <h3>
+        A Te BMI értéked
+        <span [ngClass]="{
+            'male': gender === 'férfi',
+            'female' : gender === 'nő'
+        }">{{bmiNumber}}</span>, ami alapján a(z) <span>{{bmiClass}}</span> csoportba tartozol.
+    </h3>
+
+    <div class="button-wrapper">
+        <button
+            class="btn btn-secondary"
+            (click)="fillAgain()">
+            <span>Kitöltöm újra</span>
+        </button>
+        <button
+            class="btn btn-primary"
+            (click)="modify()">
+            <span>Módosítom az előzőt</span>
+        </button>
+    </div>
 </div>

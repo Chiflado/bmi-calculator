@@ -14,13 +14,13 @@
                 required>   
         </div>
         <div class="form-element">
-            <label for="weigth">Súly (kg)</label>
+            <label for="weight">Súly (kg)</label>
             <input
                 type="number"
                 class="form-control"
-                id="weigth"
+                id="weight"
                 min="0"
-                (input)="setWeigth($event.target.value)"
+                (input)="setWeight($event.target.value)"
                 value="{{weight}}"
                 required>
         </div>
@@ -39,7 +39,7 @@
             <button
                 class="btn btn-primary"
                 [disabled]="!formIsValid"
-                (click)="sumbit()">
+                (click)="submit()">
                 <span>Befejezés</span>
                 <span>></span>
             </button>

@@ -24,7 +24,7 @@ export class MeasurementsComponent {
     this.setFormValidation();
   }
 
-  setWeigth(value) {
+  setWeight(value) {
     this.weigth = value;
     sessionStorage.setItem('weight', this.weigth.toString());
     this.setFormValidation();
