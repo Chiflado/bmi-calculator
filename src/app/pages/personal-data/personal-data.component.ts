@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,18 @@ import { Router } from '@angular/router';
   templateUrl: './personal-data.component.html',
   styleUrls: ['./personal-data.component.scss']
 })
-export class PersonalDataComponent {
+export class PersonalDataComponent implements OnInit {
 
   formIsValid = false;
-  firstName = '';
-  gender = '';
-  age = 0;
+  firstName = sessionStorage.getItem('firstName') || '';
+  gender = sessionStorage.getItem('gender') || '';
+  age = sessionStorage.getItem('age') || 0;
 
   constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.setFormValidation();
+  }
 
   setName(value) {
     this.firstName = value;
@@ -35,6 +39,9 @@ export class PersonalDataComponent {
   }
 
   navigatesToMeasurementsPage() {
+    sessionStorage.setItem('firstName', this.firstName);
+    sessionStorage.setItem('age', this.age.toString());
+    sessionStorage.setItem('gender', this.gender);
     this.router.navigate(['measurements']);
   }
 

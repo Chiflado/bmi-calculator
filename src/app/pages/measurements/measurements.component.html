@@ -26,9 +26,14 @@
                 required>
             </div>
         </div>
+        <p>
+            A Te neved {{firstName}}, {{age}}éves vagy és {{gender}}. A testsúlyod {{weight}} kg és {{height}}
+            méter magas vagy. Amennyiben szeretnéd megtudni a BMI értékedet, kattints a tovább
+            gombra.
+        </p>
         <div class="button-wrapper">
             <button class="btn btn-secondary" (click)="back()">Vissza</button>
-            <button class="btn btn-primary" (click)="submit()" [disabled]="!formIsValid">Tovább</button>
+            <button class="btn btn-primary" (click)="submit()" [disabled]="!formIsValid">Befejezés</button>
         </div>
     </form>
 
