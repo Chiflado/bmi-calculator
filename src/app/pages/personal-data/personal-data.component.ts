@@ -1,21 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-personal-data',
   templateUrl: './personal-data.component.html',
   styleUrls: ['./personal-data.component.scss']
 })
-export class PersonalDataComponent implements OnInit {
+export class PersonalDataComponent {
 
-  myModel = 0;
+  formIsValid = false;
+  firstName = '';
+  gender = '';
+  age = 0;
 
-  constructor() { }
+  setName(value) {
+    this.firstName = value;
+    this.formIsValid = this.firstName.length > 0 && this.gender.length > 0 && this.age > 0;
+  }
 
-  ngOnInit() {
+  setGender(value) {
+    this.gender = value;
+    this.formIsValid = this.firstName.length > 0 && this.gender.length > 0 && this.age > 0;
   }
 
   setAge(value) {
-    this.myModel = value;
+    this.age = value;
+    this.formIsValid = this.firstName.length > 0 && this.gender.length > 0 && this.age > 0;
   }
 
 }

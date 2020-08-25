@@ -1,24 +1,25 @@
 
 <div class="card-body">
     <h5 class="card-title">Kérem adja meg a személyes adatait</h5>
-    <form>
+    <form class="needs-validation" novalidate>
         <div class="form-element">
             <label for="first-name">Keresztnév</label>
-            <input type="text" class="form-control" id="first-name" required>
+            <input type="text" class="form-control" id="first-name" (input)="setName($event.target.value)" value="{{firstName}}" required>
         </div>
         <div class="form-element">
             <label for="gender">Nem</label>
-            <select class="custom-select" id="gender" required>
+            <select class="custom-select" id="gender"(input)="setGender($event.target.value)" value="{{gender}}" required>
               <option selected disabled value="">Válasszon...</option>
-              <option>férfi</option>
-              <option>nő</option>
+              <option value="male">&#xf222; férfi</option>
+              <option value="female">&#xf221; nő</option>
             </select>
         </div> 
         <label for="age-range">Életkor</label>
         <div class="range-wrap form-element">
-            <input name="ram" type="range" id="age-range" min="0" max="99" [(ngModel)]="myModel" (ngModelChange)="setAge($event)" value="0">
-            <input type="text" id="age-display" placeholder="{{myModel}}" disabled>
+            <input name="ram" type="range" id="age-range" min="0" max="99" [(ngModel)]="age" (ngModelChange)="setAge($event)" value="0">
+            <input type="text" id="age-display" placeholder="{{age}}" disabled>
         </div>
+        <button class="btn btn-primary btn-block" (click)="onSubmit()" [disabled]="!formIsValid">Tovább</button>
     </form>
-    <button class="btn btn-primary" type="submit">Tovább</button>
+
 </div>
