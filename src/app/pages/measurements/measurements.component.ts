@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './measurements.component.html',
   styleUrls: ['./measurements.component.scss']
 })
-export class MeasurementsComponent {
+export class MeasurementsComponent implements OnInit {
 
-  height = 0;
-  weight = 0;
+  height = Number(sessionStorage.getItem('height')) || 0;
+  weight = Number(sessionStorage.getItem('weight')) || 0;
   heightInM = '0';
   firstName = sessionStorage.getItem('firstName') || '';
   gender = sessionStorage.getItem('gender') || '';
@@ -18,6 +18,10 @@ export class MeasurementsComponent {
   formIsValid = false;
 
   constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.setFormValidation();
+  }
 
   setHeight(value) {
     this.height = value;
