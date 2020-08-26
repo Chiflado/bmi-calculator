@@ -24,6 +24,7 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit() {
     const loadingScreen: HTMLElement = document.getElementById('loadingScreen');
+    this.addLoadingAnimation(loadingScreen);
     this.calculateBMI();
     setTimeout(() => {
       loadingScreen.remove();
@@ -31,6 +32,15 @@ export class SummaryComponent implements OnInit {
     }, 3000);
   }
 
+  addLoadingAnimation(loadingScreen: HTMLElement) {
+    const spinner = `
+    <div class="spinner-grow text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>`;
+    for (let i = 0; i < 5; i++) {
+      loadingScreen.innerHTML += spinner;
+    }
+  }
 
   calculateBMI() {
     const heigthM = Number(this.heigth) / 100;
