@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { addLoadingAnimation } from 'src/app/utils/animation';
 
 @Component({
   selector: 'app-summary',
@@ -24,19 +25,9 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit() {
     const loadingScreen: HTMLElement = document.getElementById('loadingScreen');
-    this.addLoadingAnimation(loadingScreen);
+    addLoadingAnimation(loadingScreen);
     this.calculateBMI();
     this.removeLoadingScreen(loadingScreen);
-  }
-
-  addLoadingAnimation(loadingScreen: HTMLElement) {
-    const spinner = `
-    <div class="spinner-grow text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>`;
-    for (let i = 0; i < 5; i++) {
-      loadingScreen.innerHTML += spinner;
-    }
   }
 
   removeLoadingScreen(loadingScreen) {
