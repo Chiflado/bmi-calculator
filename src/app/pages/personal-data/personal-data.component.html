@@ -10,8 +10,8 @@
             <label for="gender">Nem</label>
             <select class="form-control" id="gender"(input)="setGender($event.target.value)" value="{{gender}}" required>
               <option selected disabled value="">Válasszon...</option>
-              <option value="férfi">&#xf222; férfi</option>
-              <option value="nő">&#xf221; nő</option>
+              <option class="fa" value="férfi">férfi &#xf222;</option>
+              <option class="fa" value="nő">nő &#xf221;</option>
             </select>
         </div> 
         <label for="age-range">Életkor</label>
