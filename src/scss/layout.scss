@@ -12,11 +12,14 @@ button {
     width: 256px;
     height: 56px;
     padding: 20px 0 16px 0;
-    margin: 0 16px;
     font-size: 16px;
     span + span {
             margin-left: 16px;
     }
+}
+
+button + button {
+    margin-left: 16px;
 }
 
 .layout-wrapper {
@@ -67,12 +70,19 @@ button {
     justify-content: center;
 }
 
+.range-wrap {
+    display: flex;
+}
+
 #age-range {
-    width: 200px;
+    width: 250px;
 }
 
 #age-display {
     width: 30px;
+    border: none;
+    padding-left: 10px;
+    font-weight: 500;
 }
 
 .custom-select {
