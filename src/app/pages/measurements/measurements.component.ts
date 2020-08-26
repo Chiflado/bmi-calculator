@@ -30,8 +30,13 @@ export class MeasurementsComponent {
     this.setFormValidation();
   }
 
+
   cancel() {
     sessionStorage.clear();
+    this.router.navigate(['personal-data']);
+  }
+
+  navigateBack() {
     this.router.navigate(['personal-data']);
   }
 
