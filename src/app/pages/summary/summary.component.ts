@@ -26,10 +26,7 @@ export class SummaryComponent implements OnInit {
     const loadingScreen: HTMLElement = document.getElementById('loadingScreen');
     this.addLoadingAnimation(loadingScreen);
     this.calculateBMI();
-    setTimeout(() => {
-      loadingScreen.remove();
-      this.isVisible = true;
-    }, 3000);
+    this.removeLoadingScreen(loadingScreen);
   }
 
   addLoadingAnimation(loadingScreen: HTMLElement) {
@@ -40,6 +37,13 @@ export class SummaryComponent implements OnInit {
     for (let i = 0; i < 5; i++) {
       loadingScreen.innerHTML += spinner;
     }
+  }
+
+  removeLoadingScreen(loadingScreen) {
+    setTimeout(() => {
+      loadingScreen.remove();
+      this.isVisible = true;
+    }, 3000);
   }
 
   calculateBMI() {
