@@ -19,16 +19,18 @@ export class SummaryComponent implements OnInit {
   gender = sessionStorage.getItem('gender');
   age = sessionStorage.getItem('age');
 
+
   constructor(private router: Router) { }
 
   ngOnInit() {
-    const splashScreen: HTMLElement = document.getElementById('splashScreenClass');
+    const loadingScreen: HTMLElement = document.getElementById('loadingScreen');
     this.calculateBMI();
     setTimeout(() => {
-      splashScreen.remove();
+      loadingScreen.remove();
       this.isVisible = true;
     }, 3000);
   }
+
 
   calculateBMI() {
     const heigthM = Number(this.heigth) / 100;
