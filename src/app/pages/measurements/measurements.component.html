@@ -24,11 +24,29 @@
                 value="{{weight}}"
                 required>
         </div>
-        <strong class="summary-text">
-            A Te neved {{firstName}}, {{age}}éves vagy és {{gender}}. A testsúlyod {{weight}} kg és {{heightInM}}
-            méter magas vagy. Amennyiben szeretnéd megtudni a BMI értékedet, kattints a befejezés
+        <p class="summary-text">
+            A Te neved 
+            <strong>
+                {{firstName}}
+            </strong>,
+            <strong>
+                {{age}}éves
+            </strong>
+             vagy és 
+             <strong>
+                {{gender}}
+             </strong>
+            . A testsúlyod 
+            <strong>
+                {{weight}} kg
+            </strong>
+             és 
+            <strong>
+                {{heightInM}} méter
+            </strong> 
+              magas vagy. Amennyiben szeretnéd megtudni a BMI értékedet, kattints a befejezés
             gombra.
-        </strong>
+        </p>
         <div class="button-wrapper">
             <button
                 class="btn btn-danger"

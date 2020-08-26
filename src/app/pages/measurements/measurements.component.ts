@@ -10,7 +10,7 @@ export class MeasurementsComponent {
 
   height = 0;
   weight = 0;
-  heightInM = '';
+  heightInM = '0';
   firstName = sessionStorage.getItem('firstName') || '';
   gender = sessionStorage.getItem('gender') || '';
   age = sessionStorage.getItem('age') || 0;
