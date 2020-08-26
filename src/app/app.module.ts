@@ -13,6 +13,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmationModalComponent } from './pages/confirmation-modal/confirmation-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MeasurementsComponent,
     SummaryComponent,
     WelcomeComponent,
+    ConfirmationModalComponent,
   ],
   imports: [
     BrowserModule,
