@@ -1,7 +1,7 @@
 
 <div class="card-body">
     <h5 class="card-title">Kérem adja meg a magasságát és a súlyát</h5>
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation measur-form" novalidate>
         <div class="form-element">
             <label for="heigth-input">Magasság (cm)</label>
             <input 
@@ -24,11 +24,11 @@
                 value="{{weight}}"
                 required>
         </div>
-        <p>
-            A Te neved {{firstName}}, {{age}}éves vagy és {{gender}}. A testsúlyod {{weight}} kg és {{height}}
-            méter magas vagy. Amennyiben szeretnéd megtudni a BMI értékedet, kattints a tovább
+        <strong class="summary-text">
+            A Te neved {{firstName}}, {{age}}éves vagy és {{gender}}. A testsúlyod {{weight}} kg és {{heightInM}}
+            méter magas vagy. Amennyiben szeretnéd megtudni a BMI értékedet, kattints a befejezés
             gombra.
-        </p>
+        </strong>
         <div class="button-wrapper">
             <button
                 class="btn btn-danger"

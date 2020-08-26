@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
 })
 export class MeasurementsComponent {
 
-  heigth = 0;
-  weigth = 0;
+  height = 0;
+  weight = 0;
+  heightInM = '';
   firstName = sessionStorage.getItem('firstName') || '';
   gender = sessionStorage.getItem('gender') || '';
   age = sessionStorage.getItem('age') || 0;
@@ -19,14 +20,15 @@ export class MeasurementsComponent {
   constructor(private router: Router) { }
 
   setHeight(value) {
-    this.heigth = value;
-    sessionStorage.setItem('height', this.heigth.toString());
+    this.height = value;
+    this.heightInM = ((this.height / 100).toFixed(2)).toString();
+    sessionStorage.setItem('height', this.height.toString());
     this.setFormValidation();
   }
 
   setWeight(value) {
-    this.weigth = value;
-    sessionStorage.setItem('weight', this.weigth.toString());
+    this.weight = value;
+    sessionStorage.setItem('weight', this.weight.toString());
     this.setFormValidation();
   }
 
@@ -45,7 +47,7 @@ export class MeasurementsComponent {
   }
 
   setFormValidation() {
-    this.formIsValid = this.weigth > 0 && this.heigth > 0;
+    this.formIsValid = this.weight > 0 && this.height > 0;
   }
 
 }
