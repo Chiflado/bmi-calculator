@@ -5,11 +5,5 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './top-navbar.component.html',
   styleUrls: ['./top-navbar.component.scss']
 })
-export class TopNavbarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class TopNavbarComponent {
 }
